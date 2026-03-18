@@ -1,26 +1,26 @@
+/* The font is changed throughout the body */
 body { 
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
-
+/* added a padding and bg color to the header */
 .header{
     background-color: #f1f1f1;
     padding: 20px 10px;
     position: sticky;
 }
-
+/* the logo is floated to the left and is square */
 .header img {
     float: left;
     width: 100px;
     height: 100px;
 }
-
+/* the name is put right next to the image using relative position */
 .header h1 {
     position: relative;
     top: 10px;
     left: 10px;
 }
-
+/* the nav bar has links these links are decorated as buttons */
 .header a{
     text-decoration: none;
     padding: 12px;
@@ -28,14 +28,14 @@ body {
     background-color: rgb(206, 14, 14);
     border-radius: 10%;
 }
-
+/* the nav section is floated to the right and position is adjusted accordingly */
 .navigation{
     float: right;
     position: relative;
     top: -60px;
     padding: 20px;
 }
-
+/* every section has a bg color of red and vertical height of 100%  */
 .section{
     height: 100vh;
     background: rgb(207, 0, 0);
@@ -44,7 +44,7 @@ body {
     color: white;
     text-align: center;
 }
-
+/* white section */
 .section--white{
     color: black;
     background: white;
@@ -54,12 +54,31 @@ body {
     height: 500px;
     width: 500px;
 }
-
+/* the margin gives a white line in order to remove it we remove the margin */
 .section h2{
     margin: 0;
 }
-
+/* same as the header */
 .footer{
     background-color: #f1f1f1;
     padding: 20px 10px;
+}
+/* media queries are used for responsiveness */
+@media screen and (max-width: 650px){
+    /* hide the name */
+    .header h1{
+        opacity: 0;
+    }
+    /* reduce the size of images */
+    .section img{
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    /* hide the nav bar */
+    .navigation{
+        opacity: 0;
+    }
 }
