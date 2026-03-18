@@ -1,0 +1,42 @@
+body{
+    box-sizing: border-box;
+}
+/* aligning the text to center */
+.title{
+    text-align: center;
+}
+/* for desktop we divide columns to 3 and row into 2 */
+.f1-teams{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+/* keeps the aspect ratio 1:1 and puts a border */
+section{
+    /* place-self: center; */
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+}
+/* image inside the grid element has 80 percent as height and width */
+section img{
+    height: 80%;
+    width: 80%;
+}
+
+section h2{
+    text-align: center;
+}
+/* if its a tab or smaller device then we can fit 2 columns and 3 rows */
+@media screen and (max-width: 850px){
+    .f1-teams{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+}
+/* for mobile devices we can fit only 1 column and 6 rows */
+@media screen and (max-width: 600px){
+    .f1-teams{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6,1fr);
+    }
+}
