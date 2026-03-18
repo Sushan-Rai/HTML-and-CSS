@@ -1,0 +1,29 @@
+/* centering the div and changing the flex direction to column */
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* added box shadow and border black and rounded the corners added a transition effect for smooth transition */
+.card{
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.4);
+    width: 25%;
+    border-style: solid;
+    border-color: black;
+    border-radius: 2%;
+    transition: 0.3s;
+}
+/* while hovering transforms the card to 1.2 times its size and boldened the box shadows */
+.card:hover{
+    transform: scale(1.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.8);
+}
+/* the image inside the card is put to a width of 100 percent to match the card */
+.card img{
+    width: 100%;
+}
+/* the description and name have been padded */
+.description{
+    padding: 2px 16px;
+}
