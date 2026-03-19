@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Header with a navbar as the menu and the a dropdown as a submenu -->
+    <title>Navigation Bar DropDown</title>
+</head>
+<body>
+    <header class="header">
+        <!-- This is the logo with the name and navbar all in flex justfied with space between -->
+        <img class="logo" src="logo.png"></img>
+        <h1>Formula 1</h1>
+        <ul class="navigation">
+            <!-- the unordered list is in flexbox and has various lists -->
+            <li href="#welcome">Welcome</li>
+            <li href="#about">About</li>
+            <li class="dropdown" href="#teams">
+                <button class="dropbtn">Teams and Drivers</button>
+                <ul class="dropdown-content">
+                    <li href="#">Mercedes</li>
+                    <li href="#">Ferrari</li>
+                    <li href="#">RedBull</li>
+                    <li href="#">Mclaren</li>
+                </ul>
+            </li>
+            <!-- this is for mobile functionality -->
+            <div class="dropdown-mobile">
+                <button class="morebtn" href="#">More</button>
+                <div class="dropdown-content--mobile">
+                    <a href="#welcome">Welcome</a>
+                    <a href="#about">About</a>
+                    <a href="#">Mercedes</a>
+                    <a href="#">Ferrari</a>
+                    <a href="#">RedBull</a>
+                    <a href="#">Mclaren</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>

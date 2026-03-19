@@ -1,0 +1,111 @@
+body { 
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul{
+    list-style-type: none;
+}
+/* The header is positioned as sticky and is a flexbox with space between the elements */
+.header{
+    background-color: #f1f1f1;
+    padding: 20px 10px;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header img {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+.header h1 {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+/* the immediate child is given a css as a button */
+.navigation > li, .morebtn{
+    text-decoration: none;
+    padding: 12px;
+    color: white;
+    background-color: rgb(206, 14, 14);
+    border-radius: 10%;
+    cursor: pointer;
+    border: none;
+    margin: 2px;
+}
+/* A button to capture hover events */
+.dropbtn{
+    color: white;
+    background-color: rgb(206, 14, 14);
+    border: none;
+    cursor: pointer;
+}
+/* change the color while hovering */
+.dropbtn:hover, .morebtn:hover{
+    background-color: rgb(40, 216, 216);
+}
+/* Nav bar is placed in the end */
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+/* drop down submenu is shown above the webpage */
+.dropdown-content, .dropdown-content--mobile{
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+/* the submenu css */
+.dropdown-content li, .dropdown-content--mobile a{
+    text-decoration: none;
+    color: black;
+    padding: 12px 6px;
+}
+/* while hovering the submenu change in bg color */
+.dropdown-content li:hover, .dropdown-content--mobile a:hover{
+    background-color: aquamarine;
+}
+
+.dropdown:hover .dropdown-content{
+    display: flex;
+    flex-direction: column;
+}
+/* more button is not visible for desktop devices */
+.dropdown-mobile{
+    display: none;
+}
+/* media screen is lesser than 600px then remove main heading and place the header contents to the center */
+@media screen and (max-width:600px){
+    .header h1{
+        display: none;
+    }
+
+    .header{
+        justify-content: center;
+    }
+
+    .navigation{
+        justify-content: center;
+    }
+}
+/* lesser than 350px then remove the lists in the naviagtion and display the more btn*/
+@media screen and (max-width:350px){
+    .navigation > li, .dropdown{
+        display: none;
+    }
+    .dropdown-mobile{
+        display: block;
+    }
+    .dropdown-mobile:hover .dropdown-content--mobile{
+        display: flex;
+        flex-direction: column;
+    }
+}
