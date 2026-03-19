@@ -1,0 +1,49 @@
+body{
+    overflow-x: hidden;
+}
+/* the target is another page taking the whole page with smooth transition effects and centered the contents*/
+.popup-bar{
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    transition: opacity 0.3s ease;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    /* flex-direction: column; */
+}
+/* once the anchor link is clicked the opacity is 1 and the popup is visible */
+.popup-bar:target{
+    opacity: 1;
+    visibility: visible;
+}
+/* the popup content is styled */
+.popup-content{
+    text-align: center;
+    background-color: white;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+/* the anchor links are  styled */
+a{
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    padding: 4px 8px;
+    border-radius: 10%;
+}
+/* the initial button or anchor tag is centered */
+.clickbtn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
