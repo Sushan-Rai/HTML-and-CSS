@@ -1,0 +1,26 @@
+.form-checkbox{
+    text-align: center;
+}
+/* smooth transition between one page to another */
+.f1-team-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    height: 80vh;
+    width: 100vw;
+    box-sizing: border-box;
+    padding-left: 20%;
+    padding-right: 20%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+/* Here we check for the checked pseudo tag and then add the flex */
+#Mercedes:checked ~ #Mercedes-Page,
+#McLaren:checked ~ #McLaren-Page,
+#Ferrari:checked ~ #Ferrari-Page{
+    opacity: 1;
+    visibility: visible;
+}
