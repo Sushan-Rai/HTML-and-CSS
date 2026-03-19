@@ -1,0 +1,34 @@
+input {
+    display: none;
+}
+/* this is the label for this block with transition effects  */
+label {
+    display: block;    
+    padding: 8px 22px;
+    margin: 0 0 1px 0;
+    cursor: pointer;
+    background: #171717;
+    border-radius: 3px;
+    color: #f1f1f1;
+    transition: ease 1s;
+}
+/* the hover effect has a transition */
+label:hover {
+    background: crimson;
+}
+/* this is the content when visible will be show with whitish color */
+.content {
+    background: #E2E5F6;
+    padding: 10px 25px;
+    border: 1px solid #A7A7A7;
+    margin: 0 0 1px 0;
+    border-radius: 3px;
+}
+/* this combination if not checked the content will not be displayed */
+input + label + .content {
+    display: none;
+}
+/* if the input is checked then the content is displayed */
+input:checked + label + .content {
+    display: block;
+}
