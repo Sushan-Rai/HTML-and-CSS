@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/* This is the body it has crimson color */
+body{
+    background-color: crimson;
+}
+/* the image container is centered and has overflow hidden to not show any images outside */
+.image-container{
+    width: 12.5%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border: 10px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+/* add margin between the two options */
+.image-container > input{
+    margin: 10px;
+}
+/* make the images into a horizontal flex and image acquires full length */
+.slider{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+/* transparent images are made into white */
+img{
+    width: 100%;
+    background-color: white;
+}
+/* if we press left animation should start from 0% to -500% */
+#left:checked ~ .slider{
+    animation: slide 20s infinite;
+}
+/* reverse */
+#right:checked ~ .slider{
+    animation: slide 20s infinite;
+    animation-direction: reverse;
+}
+/* Divided it based on the images */
+@keyframes slide {
+    0% { 
+        transform: translateX(0); 
+    }
+    15% { 
+        transform: translateX(0); 
+    }
+
+    20% { 
+        transform: translateX(-100%); 
+    }
+    35% { 
+        transform: translateX(-100%); 
+    }
+
+    40% { 
+        transform: translateX(-200%); 
+    }
+    55% { 
+        transform: translateX(-200%); 
+    }
+
+    60% { 
+        transform: translateX(-300%); 
+    }
+    75% { 
+        transform: translateX(-300%); 
+    }
+
+    80% { 
+        transform: translateX(-400%); 
+    }
+    90% { 
+        transform: translateX(-400%); 
+    }
+
+    95% { 
+        transform: translateX(-500%); 
+    }
+    100% { 
+        transform: translateX(-500%); 
+    }
+}
