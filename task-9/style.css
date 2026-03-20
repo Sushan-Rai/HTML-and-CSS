@@ -1,0 +1,147 @@
+/* setting the whole page to a color and text and margin of 8px*/
+body{
+    background-color: crimson;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 8px;
+}
+/* this is the grid box divided into three rows and two columns according to the webpage*/
+.grid-box{
+    grid-template-rows: auto auto auto;
+    grid-template-columns: 1fr 4fr;
+    display: grid;
+    gap: 5px;
+}
+/* the header needs to be sticky and has to stick to the top and chosen the grid elements 1 to 2 in columns and 1 in row */
+.header{
+    grid-column: 1/3;
+    grid-row: 1/2;
+    display: flex;
+    background-color: antiquewhite;
+    color: black;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    justify-content: flex-start;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.header > h1{
+    width: 100%;
+    text-align: center;
+}
+/* nav bar is in the left and takes the 2nd row */
+.navigation{
+    grid-column: 1/2;
+    grid-row: 2/3;
+    width: 100%;
+    background-color: antiquewhite;
+    color: black;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navigation > a{
+    text-decoration: none;
+    padding: 10% 10%;
+    color: black;
+}
+/* the main section takes the center and right part of the grid of the 2nd row */
+.content{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    height: 100%;
+    width: 100%;
+    background-color: antiquewhite;
+    color: black;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.section{
+    height: 50vh;
+    box-sizing: border-box;
+    padding: 40px;
+    text-align: center;
+}
+
+.section img{
+    width: 20%;
+}
+/* the footer is placed is in this way in the end row */
+.footer{
+    grid-row: 3/4;
+    grid-column: 1/3;
+    background-color: antiquewhite;
+    color: black;
+    box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+/* removing the nav bar and providing space to the main */
+@media screen and (max-width:900px){
+    .navigation{
+        display: none;
+    }
+    .content{
+        grid-column: 1/3;
+    }
+    .section{
+        height: 100vh;
+    }
+}
+/* remove the main header and center the logo */
+@media screen and (max-width: 500px){
+    .header > h1{
+        display: none;
+    }
+    .header{
+        justify-content: center;
+    }
+}
+/* the popup container makes black bg and inside that there is a div which is centered */
+.popup-container{
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    transition: opacity 0.3s ease;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.popup-container:target{
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup{
+    text-align: center;
+    background-color: white;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
